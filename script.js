@@ -66,8 +66,8 @@ function ordenarAlfabeticamente(catalogo){
 }
 
 //funcion para realizar compra
-function comprar(catalogo){
-    let carroOpcion = parseInt(prompt(`¿Cuáles carros desea comprar?
+function opcionCarro(){
+    let carros = parseInt(prompt(`¿Cuáles carros desea comprar?
 	1: HotWheels 1970 Pontiac Firebird $${precio}
 	2: HotWheels Tooned Volkswagen Golf Mk1 $${precio}
 	3: HotWheels Porsche 935 $${precio}
@@ -84,95 +84,104 @@ function comprar(catalogo){
 	14: "Matchbox 1956 Aston Martin" $${precio}
 	15: "Matchbox 2015 Alfa Romeo Giulia" $${precio}
 	16 = Escribe 16 para finalizar compra`))
-        switch(carro){
+    comprar(carros)
+}
+function comprar(seleccionCarros){
+        switch(seleccionCarros){
             case 1:
                 total += precio
                 cantidad = i++
-                console.log(`${buyer} has agregado ${carro1} con éxito. Total de productos agregados: ${cantidad}.`);
+                console.log(`${buyer} has agregado ${carro1.modelo} con éxito. Total de productos agregados: ${cantidad}.`);
                 break
             case 2:
                 total += precio
                 cantidad = i++
-                console.log(`${buyer} has agregado ${carro2} con éxito. Total de productos agregados: ${cantidad}.`);
+                console.log(`${buyer} has agregado ${carro2.modelo} con éxito. Total de productos agregados: ${cantidad}.`);
                 break
             case 3:
                 total += precio
                 cantidad = i++
-                console.log(`${buyer} has agregado ${carro3} con éxito. Total de productos agregados: ${cantidad}.`);
+                console.log(`${buyer} has agregado ${carro3.modelo} con éxito. Total de productos agregados: ${cantidad}.`);
                 break
             case 4:
                 total += precio
                 cantidad = i++                                                    
-                console.log(`${buyer} has agregado ${carro4} con éxito. Total de productos agregados: ${cantidad}.`);
+                console.log(`${buyer} has agregado ${carro4.modelo} con éxito. Total de productos agregados: ${cantidad}.`);
                 break
             case 5:
                 total += precio
                 cantidad = i++
-                console.log(`${buyer} has agregado ${carro5} con éxito. Total de productos agregados: ${cantidad}.`);
+                console.log(`${buyer} has agregado ${carro5.modelo} con éxito. Total de productos agregados: ${cantidad}.`);
                 break
             case 6:
                 total += precio
                 cantidad = i++
-                console.log(`${buyer} has agregado ${carro6} con éxito. Total de productos agregados: ${cantidad}.`);
+                console.log(`${buyer} has agregado ${carro6.modelo} con éxito. Total de productos agregados: ${cantidad}.`);
                 break
             case 7:
                 total += precio
                 cantidad = i++
-                console.log(`${buyer} has agregado ${carro7} con éxito. Total de productos agregados: ${cantidad}.`);
+                console.log(`${buyer} has agregado ${carro7.modelo} con éxito. Total de productos agregados: ${cantidad}.`);
                 break
             case 8:
                 total += precio
                 cantidad = i++
-                console.log(`${buyer} has agregado ${carro8} con éxito. Total de productos agregados: ${cantidad}.`);
+                console.log(`${buyer} has agregado ${carro8.modelo} con éxito. Total de productos agregados: ${cantidad}.`);
                 break
             case 9:
                 total += precio
                 cantidad = i++
-                console.log(`${buyer} has agregado ${carro9} con éxito. Total de productos agregados: ${cantidad}.`);
+                console.log(`${buyer} has agregado ${carro9.modelo} con éxito. Total de productos agregados: ${cantidad}.`);
                 break
             case 10:
                 total += precio
                 cantidad = i++            
-                console.log(`${buyer} has agregado ${carro10} con éxito. Total de productos agregados: ${cantidad}.`);
+                console.log(`${buyer} has agregado ${carro10.modelo} con éxito. Total de productos agregados: ${cantidad}.`);
                 break
             case 11:
                 total += precio
                 cantidad = i++            
-                console.log(`${buyer} has agregado ${carro11} con éxito. Total de productos agregados: ${cantidad}.`);
+                console.log(`${buyer} has agregado ${carro11.modelo} con éxito. Total de productos agregados: ${cantidad}.`);
                 break
             case 12:
                 total += precio
                 cantidad = i++            
-                console.log(`${buyer} has agregado ${carro12} con éxito. Total de productos agregados: ${cantidad}.`);
+                console.log(`${buyer} has agregado ${carro12.modelo} con éxito. Total de productos agregados: ${cantidad}.`);
                 break
             case 13:
                 total += precio
                 cantidad = i++            
-                console.log(`${buyer} has agregado ${carro13} con éxito. Total de productos agregados: ${cantidad}.`);
+                console.log(`${buyer} has agregado ${carro13.modelo} con éxito. Total de productos agregados: ${cantidad}.`);
                 break
             case 14:
                 total += precio
                 cantidad = i++            
-                console.log(`${buyer} has agregado ${carro14} con éxito. Total de productos agregados: ${cantidad}.`);
+                console.log(`${buyer} has agregado ${carro14.modelo} con éxito. Total de productos agregados: ${cantidad}.`);
                 break
             case 15:
                 total += precio
                 cantidad = i++            
-                console.log(`${buyer} has agregado ${carro15} con éxito. Total de productos agregados: ${cantidad}.`);
+                console.log(`${buyer} has agregado ${carro15.modelo} con éxito. Total de productos agregados: ${cantidad}.`);
                 break
             case 16:
-                compra = false
-                if(total != 0){
-                console.log(`RESUMEN DE COMPRA: ${buyer} el total de compra es $${total} y llevas ${cantidad} carros hoy. Te enviaremos tu compra a ${direccion} y la información de contacto en nuestra base de datos es teléfono: ${telefono} y correo electrónico: ${correo}. ¡Gracias por tu visita!`)
-            }else{
-                console.log(`¡${buyer}, no agregaste productos al carrito! Te esperamos la próxima.`)
-            }
+                let pregunta = prompt("Desea continuar comprando?").toLowerCase();
+                if (pregunta == "no") {
+                    if (total != 0) {
+                        console.log(`RESUMEN DE COMPRA: ${buyer} el total de compra es $${total} y llevas ${cantidad} carros hoy. Te enviaremos tu compra a ${direccion} y la información de contacto en nuestra base de datos es teléfono: ${telefono} y correo electrónico: ${correo}. ¡Gracias por tu visita!`)
+                    } else {
+                        console.log(`¡${buyer}, no agregaste productos al carrito! Te esperamos la próxima.`)
+                    }
+                }
                 break
             default: 
                 console.log("Ingresa el número correspondiente para agregar al carrito.");
             }
+        
+            }
+        
+        
             
-    }
+
 
 //variables
 let buyer = prompt("Bienvenidas y bienvenidos a The Collective Store. ¿Cómo te llamas?")
@@ -182,7 +191,6 @@ let direccion = prompt("¿Dónde te entregamos?")
 let precio = 2
 let cantidad = 0
 let total = 0
-let compra = true
 let i = 1
 
 //menu de opciones
@@ -213,7 +221,7 @@ function menu(opcionSeleccionada){
             ordenarAlfabeticamente(catalogo)
         break
         case 4:
-            comprar(catalogo)
+            opcionCarro()
         break
         default: 
         alert(`Ingrese una opción correcta`)
